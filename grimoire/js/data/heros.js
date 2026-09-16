@@ -6,10 +6,13 @@ const HEROS = {
   energieDepart: 3,
   pioche: 5,
   aspect: {
-    tete: 'sorcier', corps: 'robe', objet: 'baton',
+    tete: 'sorcier', corps: 'robe',
     pal: {
-      h: '#2a2140', s: '#c9a37e', e: '#7fe0ff',
-      b: '#241c3a', a: '#3a2a5c', L: '#6b5222', g: '#c9a3ff'
+      D: '#1a1430', C: '#3a2d5c', F: '#c9b8ff',
+      p: '#e0b98f', P: '#b98f66', e: '#7fe0ff', n: '#3a2a20',
+      R: '#4a3a72', r: '#2e2350', B: '#f0e6ff', g: '#9fffe0',
+      M: '#e8ddff', S: '#241c3a',
+      L: '#2a3a2e', l: '#18241c'
     }
   }
 };
