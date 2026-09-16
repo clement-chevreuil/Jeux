@@ -394,18 +394,18 @@ document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootst
 `m` = margin, `p` = padding. Directions : `t` (top), `b` (bottom), `s` (start/gauche), `e` (end/droite), `x` (horizontal), `y` (vertical), rien = les 4 côtés.
 Échelle : `0` à `5` (croissant), ou `auto`.
 
-```
+```text
 m-3   mt-2   mb-4   mx-auto   p-3   px-4   py-2
 ```
 
 ### Affichage
-```
+```text
 d-none      d-block      d-inline      d-inline-block
 d-flex      d-grid       d-md-none (responsive : caché seulement à partir de "md")
 ```
 
 ### Flexbox (avec `d-flex`)
-```
+```text
 flex-row       flex-column
 justify-content-start/center/end/between/around
 align-items-start/center/end/stretch
@@ -414,38 +414,38 @@ gap-1 à gap-5
 ```
 
 ### Dimensions
-```
+```text
 w-25  w-50  w-75  w-100  w-auto
 h-25  h-50  h-75  h-100  h-auto
 mw-100 (max-width 100%)   vh-100 (100% hauteur d'écran)
 ```
 
 ### Position
-```
+```text
 position-static/relative/absolute/fixed/sticky
 top-0  bottom-0  start-0  end-0
 translate-middle (centrage précis avec position absolute)
 ```
 
 ### Bordures et arrondis
-```
+```text
 border  border-0  border-top  border-primary  border-2 (épaisseur)
 rounded  rounded-circle  rounded-pill  rounded-0
 ```
 
 ### Ombres
-```
+```text
 shadow-none  shadow-sm  shadow  shadow-lg
 ```
 
 ### Visibilité et overflow
-```
+```text
 visible  invisible
 overflow-auto  overflow-hidden  overflow-scroll
 ```
 
 ### Z-index
-```
+```text
 z-0  z-1  z-2  z-3
 ```
 
