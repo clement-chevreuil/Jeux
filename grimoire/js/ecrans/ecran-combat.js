@@ -29,7 +29,7 @@ function dessinerJoueur() {
 
   const portrait = document.createElement('div');
   portrait.className = 'joueur-portrait';
-  portrait.appendChild(portraitAspect(HEROS.aspect, 4));
+  portrait.appendChild(portraitAspect(HEROS.aspect, 3));
   zone.appendChild(portrait);
 
   const infos = document.createElement('div');

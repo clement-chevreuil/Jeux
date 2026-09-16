@@ -12,7 +12,7 @@ const ENNEMIS = {
 
   gobelin: {
     nom: 'Gobelin Griffu', pv: 12, palier: 'normal',
-    aspect: { tete: 'gobelin', corps: 'gobelin',
+    aspect: { forme: 'gobelin',
       pal: { a: '#5c8f4a', e: '#e05a4a', W: '#f0eede', L: '#5a4632', w: '#6b4a2f' } },
     intentions: [
       { type: 'attaque', valeur: 5 },
@@ -23,7 +23,7 @@ const ENNEMIS = {
 
   chauve_rat: {
     nom: 'Rat Nécrophage', pv: 10, palier: 'normal',
-    aspect: { silhouette: 'chauve_rat',
+    aspect: { forme: 'chauve_rat',
       pal: { a: '#6a4a3a', e: '#f0d060', b: '#2a1c14' } },
     intentions: [
       { type: 'attaque', valeur: 4 },
@@ -34,7 +34,7 @@ const ENNEMIS = {
 
   araignee: {
     nom: 'Araignée Tisseuse', pv: 15, palier: 'normal',
-    aspect: { silhouette: 'araignee',
+    aspect: { forme: 'araignee',
       pal: { a: '#5a3a6e', e: '#e05a4a', b: '#8a7a9a', W: '#e8e4d2' } },
     intentions: [
       { type: 'attaque', valeur: 6 },
@@ -45,7 +45,7 @@ const ENNEMIS = {
 
   squelette: {
     nom: 'Squelette Rouillé', pv: 17, palier: 'normal',
-    aspect: { tete: 'squelette', corps: 'squelette', objet: 'lame_rouillee',
+    aspect: { forme: 'squelette', objet: 'lame_rouillee',
       pal: { W: '#e8e4d2', l: '#6a6a60', L: '#4a4a42', e: '#12100e',
              m: '#b0603a', M: '#8a6a2a', w: '#4a3626' } },
     intentions: [
@@ -56,7 +56,7 @@ const ENNEMIS = {
 
   golem: {
     nom: 'Golem de Grimoire', pv: 45, palier: 'elite',
-    aspect: { tete: 'golem', corps: 'golem',
+    aspect: { forme: 'golem',
       pal: { H: '#8a92a0', h: '#6a7280', g: '#7fe0ff' } },
     intentions: [
       { type: 'attaque', valeur: 12 },
@@ -67,7 +67,7 @@ const ENNEMIS = {
 
   spectre: {
     nom: 'Spectre Enchaîné', pv: 38, palier: 'elite',
-    aspect: { silhouette: 'spectre',
+    aspect: { forme: 'spectre',
       pal: { a: '#6ab8c0', e: '#eafcff', s: '#3a7078', l: '#8a8a90' } },
     intentions: [
       { type: 'debuff', effet: { type: 'vulnerable', valeur: 2 } },
@@ -78,7 +78,7 @@ const ENNEMIS = {
 
   bibliothecaire: {
     nom: 'Le Bibliothécaire Damné', pv: 80, palier: 'boss',
-    aspect: { tete: 'bibliothecaire', corps: 'bibliothecaire',
+    aspect: { forme: 'bibliothecaire',
       pal: { h: '#1c1428', g: '#f0c860', e: '#ff5a4a', b: '#3a1c2a',
              W: '#f0ecda', a: '#2a1420', L: '#4a2c3a' } },
     intentions: [

@@ -6,14 +6,9 @@
 const _cacheImages = new Map();
 let _prochainId = 0;
 
-/** Construit la grille complète d'un personnage : tête + corps, ou une silhouette seule. */
+/** Construit la grille complète d'un personnage à partir de sa forme (tête + corps en un seul sprite). */
 function construireGrille(aspect) {
-  let grille;
-  if (aspect.silhouette) {
-    grille = SILHOUETTES[aspect.silhouette].map(ligne => ligne.split(''));
-  } else {
-    grille = TETES[aspect.tete].concat(CORPS[aspect.corps]).map(ligne => ligne.split(''));
-  }
+  const grille = FORMES[aspect.forme].map(ligne => ligne.split(''));
   if (aspect.objet && OBJETS[aspect.objet]) {
     const o = OBJETS[aspect.objet];
     o.px.forEach((ligne, y) => {

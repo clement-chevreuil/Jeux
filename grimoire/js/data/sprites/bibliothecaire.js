@@ -1,0 +1,28 @@
+/** Sprite du Bibliothécaire Damné (boss). */
+FORMES.bibliothecaire = [
+  '...........hh...........',
+  '..........hhhh..........',
+  '.........hhhhhh.........',
+  '........hhhhhhhh........',
+  '.......hhhhhhhhhh.......',
+  '.......hggeeeeggh.......',
+  '.......hggeeeeggh.......',
+  '.......hggggggggh.......',
+  '........hggggggh........',
+  '.........hhhhhh.........',
+  '......bbhhhhhhhhbb......',
+  '.....bbhhhhhhhhhhbb.....',
+  '....bbbWWW....WWWbbb....',
+  '....bbWWgg....ggWWbb....',
+  '....bbWWggggggggWWbb....',
+  '....bbWWgg....ggWWbb....',
+  '....bbbWWW....WWWbbb....',
+  '.....bbbbbbbbbbbbbb.....',
+  '.....bbaaaaaaaaaabb.....',
+  '.....bbaaaaaaaaaabb.....',
+  '....bbaaaaaaaaaaaabb....',
+  '...bbbaaaaaaaaaaaabbb...',
+  '..bbbaaaaaaaaaaaaaaaabbb',
+  '......bbbb....bbbb......',
+  '......LLLL....LLLL......'
+];
