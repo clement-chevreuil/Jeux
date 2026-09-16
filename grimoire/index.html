@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Le Grimoire</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/composants.css">
+<link rel="stylesheet" href="css/ecrans.css">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#181022">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body>
+
+<header class="topbar">
+  <h1>📖 Le Grimoire</h1>
+  <button id="bouton-aide" class="rond" title="Aide" aria-label="Aide">?</button>
+</header>
+
+<!-- ============================ CARTE DU DONJON ============================ -->
+<main id="ecran-carte" class="ecran actif">
+  <section class="bandeau">
+    <div>
+      <h2 id="numero-etage">Étage 1</h2>
+      <p><span id="pv-carte"></span> · <span id="taille-deck"></span></p>
+    </div>
+    <button id="bouton-abandonner" class="btn fant">Nouvelle run</button>
+  </section>
+
+  <section class="bloc">
+    <h3>Reliques</h3>
+    <div id="reliques-carte" class="reliques-carte"></div>
+  </section>
+
+  <section class="bloc">
+    <h3>Où aller ?</h3>
+    <div id="noeuds-carte" class="noeuds-carte"></div>
+  </section>
+</main>
+
+<!-- ================================ COMBAT ================================ -->
+<main id="ecran-combat" class="ecran">
+  <div id="ennemis-combat" class="ennemis-combat"></div>
+
+  <div id="joueur-combat" class="joueur-combat"></div>
+
+  <div class="ligne-combat">
+    <button id="bouton-fin-tour" class="btn gros">Finir le tour</button>
+  </div>
+
+  <div id="main-combat" class="main-combat"></div>
+
+  <div id="journal-combat" class="journal-combat"></div>
+</main>
+
+<!-- ============================== RÉCOMPENSE =============================== -->
+<main id="ecran-recompense" class="ecran">
+  <section class="bandeau"><h2 id="titre-recompense">Récompense</h2></section>
+  <div id="choix-recompense" class="choix-recompense"></div>
+  <button id="bouton-passer-recompense" class="btn fant">Passer</button>
+</main>
+
+<!-- ============================== FEU DE CAMP =============================== -->
+<main id="ecran-repos" class="ecran">
+  <section class="bandeau"><h2>Feu de camp</h2></section>
+  <div class="repos-choix">
+    <button id="bouton-repos-soigner" class="btn gros">🔥 Se reposer (soigne 30% des PV max)</button>
+  </div>
+  <h3>Ou améliorer une carte</h3>
+  <div id="repos-amelioration" class="choix-recompense"></div>
+</main>
+
+<!-- ================================ ÉVÉNEMENT ================================ -->
+<main id="ecran-evenement" class="ecran">
+  <section class="bandeau"><h2 id="titre-evenement">Événement</h2></section>
+  <p id="texte-evenement" class="texte-evenement"></p>
+  <div id="choix-evenement" class="choix-evenement"></div>
+</main>
+
+<!-- ==================================== FIN ==================================== -->
+<main id="ecran-fin" class="ecran">
+  <section class="fin">
+    <h2 id="titre-fin">Fin</h2>
+    <p id="texte-fin"></p>
+    <div id="details-fin" class="details-fin"></div>
+    <button id="bouton-nouvelle-run" class="btn gros">Nouvelle run</button>
+  </section>
+</main>
+
+<!-- ================================== AIDE ================================== -->
+<div id="aide" class="voile">
+  <div class="panneau">
+    <h3>Comment ça marche</h3>
+    <ul>
+      <li>Chaque tour, tu piochers 5 cartes et as 3 énergie (✦) à dépenser.</li>
+      <li>Clique une carte, puis un ennemi si elle en a besoin, pour la jouer.</li>
+      <li>Le bloc (🛡️) absorbe les dégâts, mais retombe à zéro à ton prochain tour.</li>
+      <li>Après un combat, tu choisis une carte à ajouter à ton deck (ou une relique après un élite).</li>
+      <li>Si tu tombes, la run s'arrête. Elle recommence à zéro deck à zéro, sans rien garder.</li>
+    </ul>
+    <button id="aide-fermer" class="btn">Compris</button>
+  </div>
+</div>
+
+<script src="js/data/aspects.js"></script>
+<script src="js/data/heros.js"></script>
+<script src="js/data/ennemis.js"></script>
+<script src="js/data/cartes.js"></script>
+<script src="js/data/etages.js"></script>
+<script src="js/data/evenements.js"></script>
+<script src="js/data/reliques.js"></script>
+
+<script src="js/rendu/sprites.js"></script>
+
+<script src="js/moteur/pioche.js"></script>
+<script src="js/moteur/combat.js"></script>
+<script src="js/moteur/donjon.js"></script>
+<script src="js/moteur/sauvegarde.js"></script>
+<script src="js/moteur/ameliorations.js"></script>
+
+<script src="js/ui/composant-barre.js"></script>
+<script src="js/ui/composant-carte.js"></script>
+<script src="js/ui/composant-ennemi.js"></script>
+<script src="js/ui/composant-noeud.js"></script>
+
+<script src="js/ecrans/ecran-carte.js"></script>
+<script src="js/ecrans/ecran-combat.js"></script>
+<script src="js/ecrans/ecran-recompense.js"></script>
+<script src="js/ecrans/ecran-repos.js"></script>
+<script src="js/ecrans/ecran-evenement.js"></script>
+<script src="js/ecrans/ecran-fin.js"></script>
+
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+/**
+ * base.css — réinitialisation, variables de couleur, typographie, mise en page générale.
+ * Les styles propres aux composants et aux écrans vivent dans leurs propres fichiers.
+ */
+
+:root {
+  --fond: #181022;
+  --fond-clair: #221934;
+  --bordure: #3a2d52;
+  --texte: #ece6f4;
+  --texte-doux: #9c8fb8;
+  --or: #e8c467;
+  --sang: #e0645a;
+  --vie: #7fe08a;
+  --accent: #8a6fd8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  line-height: 1.45;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+
+/* ------------------------------- barre du haut ------------------------------- */
+
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 12px 16px;
+  background: #120c1a; border-bottom: 2px solid var(--bordure);
+  position: sticky; top: 0; z-index: 30;
+}
+.topbar h1 { margin: 0; font-size: 1.05rem; letter-spacing: 1px; }
+
+.rond {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 2px solid var(--bordure); background: var(--fond-clair);
+  color: var(--texte-doux); font-family: inherit; font-size: 15px; cursor: pointer;
+}
+.rond:hover { color: var(--or); border-color: var(--or); }
+
+/* ---------------------------------- écrans ---------------------------------- */
+
+.ecran { display: none; max-width: 780px; margin: 0 auto; padding: 16px 16px 60px; }
+.ecran.actif { display: block; }
+
+.bandeau {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; flex-wrap: wrap;
+  border-left: 4px solid var(--accent);
+  padding: 4px 0 4px 12px; margin-bottom: 18px;
+}
+.bandeau h2 { margin: 0; font-size: 1.2rem; }
+.bandeau p { margin: 0; color: var(--texte-doux); font-size: .85rem; }
+
+.bloc { margin-bottom: 24px; }
+.bloc h3 {
+  margin: 0 0 10px; font-size: .78rem; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--texte-doux);
+}
+.texte-vide { color: var(--texte-doux); font-size: .85rem; font-style: italic; }
+
+/* ---------------------------------- boutons ---------------------------------- */
+
+.btn {
+  font-family: inherit; font-size: .85rem; letter-spacing: 1px;
+  padding: 10px 18px; border-radius: 4px; cursor: pointer;
+  background: var(--accent); color: #14101c; border: 2px solid transparent;
+  font-weight: bold;
+}
+.btn:hover { filter: brightness(1.12); }
+.btn:disabled { opacity: .35; cursor: not-allowed; filter: none; }
+.btn.gros { padding: 12px 24px; font-size: .95rem; }
+.btn.fant { background: transparent; color: var(--texte-doux); border-color: var(--bordure); }
+.btn.fant:hover { color: var(--sang); border-color: var(--sang); }
+
+/* ------------------------------------ aide ------------------------------------ */
+
+.voile {
+  display: none; position: fixed; inset: 0; z-index: 60;
+  background: rgba(8, 6, 12, .82); padding: 20px;
+  align-items: center; justify-content: center;
+}
+.voile.ouvert { display: flex; }
+.panneau {
+  background: var(--fond-clair); border: 2px solid var(--bordure); border-radius: 6px;
+  padding: 20px; max-width: 440px; width: 100%;
+}
+.panneau h3 { margin: 0 0 12px; color: var(--or); font-size: 1rem; }
+.panneau ul { margin: 0 0 18px; padding-left: 18px; font-size: .82rem; color: var(--texte-doux); }
+.panneau li { margin-bottom: 7px; }
+
+@media (max-width: 520px) {
+  .ecran { padding: 12px 12px 48px; }
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIFE Jeux</title>
+  <link rel="stylesheet" href="vendor-pack/vendor/bootstrap/bootstrap.min.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2c5f4f">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <style>
+    :root {
+      --primary: #2c5f4f;
+      --accent: #2c5f4f;
+      --bg: #fbfaf8;
+    }
+    body {
+      background: linear-gradient(135deg, var(--bg) 0%, #f5f2ed 100%);
+      min-height: 100vh;
+      font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 0 2rem;
+    }
+    .hero h1 {
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .hero p {
+      color: #666;
+      font-size: 1.1rem;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    .project-card {
+      background: white;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+    .project-header {
+      background: var(--primary);
+      color: white;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+    .project-header h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+    .project-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .project-body {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-description {
+      color: #666;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    .project-link {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .project-link:hover {
+      background: #1f4535;
+      color: white;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: #999;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>🎮 LIFE Jeux</h1>
+    <p>Une collection de petits jeux légers et autonomes</p>
+  </div>
+
+  <div class="projects">
+    <!-- Rogue Project -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon">🗝️</div>
+        <h2>Petit Donjon</h2>
+      </div>
+      <div class="project-body">
+        <p class="project-description">
+          Mini rogue-like au tour par tour : explore des donjons générés au hasard, bats les monstres et descends le plus bas possible.
+        </p>
+        <a href="rogue/index.html" class="project-link">Ouvrir →</a>
+      </div>
+    </div>
+
+    <!-- Arene Project -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon">⚔️</div>
+        <h2>Dernière Escouade</h2>
+      </div>
+      <div class="project-body">
+        <p class="project-description">
+          Rogue-like en pixel art : compose ton escouade carte par carte, envoie-la contre les monstres. Un héros qui tombe est perdu pour de bon.
+        </p>
+        <a href="arene/index.html" class="project-link">Ouvrir →</a>
+      </div>
+    </div>
+
+    <!-- Grimoire Project -->
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-icon">📖</div>
+        <h2>Le Grimoire</h2>
+      </div>
+      <div class="project-body">
+        <p class="project-description">
+          Deckbuilder rogue-like : un sorcier, un deck qui grossit à chaque victoire, une carte du donjon à embranchements. Si tu tombes, la run recommence de zéro.
+        </p>
+        <a href="grimoire/index.html" class="project-link">Ouvrir →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Tous les jeux fonctionnent hors-ligne. Aucune dépendance externe, aucun serveur requis.</p>
+  </footer>
+
+  <script src="vendor-pack/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+    }
+  </script>
+</body>
+</html>

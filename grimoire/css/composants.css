@@ -1,0 +1,97 @@
+/**
+ * composants.css — éléments réutilisés à plusieurs endroits : carte, barre, ennemi,
+ * pastille de statut, nœud de la carte du donjon. Un bloc par composant.
+ */
+
+/* ------------------------------------ carte ------------------------------------ */
+
+.carte {
+  position: relative;
+  background: linear-gradient(180deg, #241c3a 0%, #191227 100%);
+  border: 2px solid var(--bordure);
+  border-radius: 6px;
+  padding: 14px 10px 10px;
+  min-height: 150px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: transform .12s, border-color .12s, box-shadow .12s;
+}
+.carte:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 8px 18px rgba(0,0,0,.4); }
+.carte.carte-grisee { opacity: .4; cursor: not-allowed; transform: none; }
+.carte.carte-grisee:hover { border-color: var(--bordure); box-shadow: none; }
+.carte.carte-selectionnee { border-color: var(--or); box-shadow: 0 0 0 2px var(--or); transform: translateY(-4px); }
+
+.carte-attaque { border-top: 3px solid var(--sang); }
+.carte-competence { border-top: 3px solid #5fa8d8; }
+.carte-pouvoir { border-top: 3px solid var(--or); }
+.carte.rarete-rare { box-shadow: 0 0 0 1px #5fa8d8 inset; }
+.carte.rarete-epique { box-shadow: 0 0 0 1px #c07fe0 inset; }
+
+.carte-cout {
+  position: absolute; top: 6px; left: 8px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: #100c18; border: 1px solid var(--or); color: var(--or);
+  font-size: .8rem; font-weight: bold;
+  display: flex; align-items: center; justify-content: center;
+}
+.carte-icone { font-size: 1.6rem; margin: 6px 0 4px; }
+.carte-nom { font-weight: bold; font-size: .88rem; margin-bottom: 6px; }
+.carte-description { font-size: .74rem; color: var(--texte-doux); line-height: 1.35; }
+
+.carte-relique .carte-icone { font-size: 2rem; }
+
+/* ------------------------------------ barre ------------------------------------ */
+
+.barre {
+  flex: 1; height: 8px; border-radius: 4px;
+  background: #100c18; border: 1px solid #3a3150; overflow: hidden;
+}
+.barre-remplissage { height: 100%; background: var(--vie); transition: width .25s; }
+.barre.barre-pv .barre-remplissage { background: var(--vie); }
+
+/* ------------------------------------ ennemi ------------------------------------ */
+
+.ennemi {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 8px; border-radius: 6px; min-width: 110px;
+  transition: transform .1s;
+}
+.ennemi-mort { opacity: .25; }
+.ennemi-ciblable { cursor: pointer; }
+.ennemi-ciblable:hover { transform: translateY(-4px); background: rgba(224, 100, 90, .12); }
+
+.ennemi-portrait canvas { image-rendering: pixelated; display: block; }
+.ennemi-nom { font-size: .78rem; font-weight: bold; text-align: center; }
+.ennemi-pv { display: flex; align-items: center; gap: 6px; width: 100%; }
+.ennemi-pv span { font-size: .68rem; color: var(--texte-doux); white-space: nowrap; }
+.ennemi-statuts { display: flex; flex-wrap: wrap; gap: 3px; justify-content: center; min-height: 18px; }
+.ennemi-intention {
+  font-size: .82rem; background: #100c18; border: 1px solid var(--bordure);
+  border-radius: 10px; padding: 2px 8px;
+}
+
+.pastille-statut {
+  font-size: .68rem; background: #100c18; border: 1px solid var(--bordure);
+  border-radius: 8px; padding: 1px 5px;
+}
+
+/* --------------------------------- nœud de carte --------------------------------- */
+
+.noeud {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 16px 12px; min-width: 100px;
+  background: var(--fond-clair); border: 2px solid var(--bordure); border-radius: 8px;
+  color: var(--texte); font-family: inherit; cursor: pointer;
+}
+.noeud:hover { border-color: var(--accent); transform: translateY(-3px); }
+.noeud-icone { font-size: 1.8rem; }
+.noeud-label { font-size: .74rem; text-align: center; }
+.noeud-elite { border-color: #c07fe0; }
+.noeud-boss { border-color: var(--sang); }
+
+.relique-badge {
+  font-size: .72rem; padding: 3px 8px; border-radius: 3px;
+  background: #2a2140; border: 1px solid var(--or); color: var(--or);
+  margin: 0 4px 4px 0; display: inline-block;
+}

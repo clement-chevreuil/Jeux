@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Dernière Escouade</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#14101c">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
+</head>
+<body data-biome="foret">
+
+<header class="topbar">
+  <h1>⚔️ Dernière Escouade</h1>
+  <button id="btn-aide" class="rond" title="Aide" aria-label="Aide">?</button>
+</header>
+
+<!-- ============================ CAMP ============================ -->
+<main id="ecran-camp" class="ecran actif">
+
+  <section class="bandeau">
+    <div>
+      <h2 id="titre-niveau">Niveau 1</h2>
+      <p id="sous-titre">Forêt</p>
+    </div>
+    <div id="reliques" class="reliques"></div>
+  </section>
+
+  <section class="bloc">
+    <h3>Ce qui t’attend</h3>
+    <div id="ennemis" class="ennemis"></div>
+  </section>
+
+  <section class="bloc">
+    <h3>Escouade — glisse tes héros ici</h3>
+    <div id="slots" class="slots"></div>
+    <div class="actions">
+      <button id="btn-combat" class="btn gros">Envoyer l’escouade</button>
+      <button id="btn-reset" class="btn fant">Nouvelle run</button>
+    </div>
+  </section>
+
+  <section class="bloc">
+    <h3>Collection</h3>
+    <div id="collection" class="grille-cartes"></div>
+  </section>
+
+  <section class="bloc">
+    <button id="bascule-cimetiere" class="lien">🪦 Cimetière (<span id="compte-cimetiere">0</span>)</button>
+    <div id="cimetiere" class="cimetiere">
+      <div id="liste-cimetiere"></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- =========================== COMBAT =========================== -->
+<main id="ecran-combat" class="ecran">
+  <section class="bandeau">
+    <h2 id="titre-combat">Combat</h2>
+    <div class="vitesses">
+      <button class="btn mini on" data-vitesse="1">×1</button>
+      <button class="btn mini" data-vitesse="2">×2</button>
+      <button class="btn mini" data-vitesse="4">×4</button>
+    </div>
+  </section>
+
+  <div class="scene-cadre">
+    <canvas id="scene" width="480" height="240"></canvas>
+  </div>
+
+  <div id="suite-combat" class="suite"></div>
+
+  <div id="journal" class="journal"></div>
+</main>
+
+<!-- ========================= RÉCOMPENSE ========================= -->
+<main id="ecran-recompense" class="ecran">
+  <section class="bandeau"><h2>Choisis une carte</h2></section>
+  <div id="cartes-recompense" class="recompenses"></div>
+</main>
+
+<!-- ============================ FIN ============================= -->
+<main id="ecran-fin" class="ecran">
+  <section class="fin">
+    <h2 id="fin-titre">Fin</h2>
+    <p id="fin-texte"></p>
+    <div id="fin-detail" class="fin-detail"></div>
+    <button id="btn-rejouer" class="btn gros">Repartir de zéro</button>
+  </section>
+</main>
+
+<!-- ============================ AIDE ============================ -->
+<div id="aide" class="voile">
+  <div class="panneau">
+    <h3>Comment ça marche</h3>
+    <ul>
+      <li>Glisse tes héros dans les emplacements d’escouade, puis envoie-les. Au doigt, un simple appui suffit : le héros rejoint le premier emplacement libre (réappuie pour le retirer).</li>
+      <li>Le combat se résout tout seul : tout se joue au moment du placement.</li>
+      <li>Une victoire rend un quart des PV à tout le monde. Le reste se récupère par les cartes.</li>
+      <li><strong>Un héros qui tombe est perdu définitivement.</strong> Il part au cimetière.</li>
+      <li>Niveau gagné → tu pioches 1 carte parmi 3. Niveau perdu → tu retentes avec ce qu’il reste.</li>
+      <li>Plus aucun héros = fin de la run.</li>
+    </ul>
+    <button id="aide-fermer" class="btn">Compris</button>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/sprites.js"></script>
+<script src="js/battle.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

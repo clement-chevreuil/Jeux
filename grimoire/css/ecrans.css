@@ -1,0 +1,76 @@
+/**
+ * ecrans.css — mise en page propre à chaque écran (carte du donjon, combat,
+ * récompense, feu de camp, événement, fin). Un bloc par écran.
+ */
+
+/* ------------------------------- carte du donjon ------------------------------- */
+
+.reliques-carte { display: flex; flex-wrap: wrap; gap: 6px; }
+.noeuds-carte { display: flex; flex-wrap: wrap; gap: 14px; }
+
+/* ------------------------------------ combat ------------------------------------ */
+
+.ennemis-combat {
+  display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+  padding: 20px 10px; min-height: 200px;
+}
+
+.joueur-combat {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--fond-clair); border: 2px solid var(--bordure); border-radius: 8px;
+  padding: 10px 14px; margin-bottom: 12px;
+}
+.joueur-portrait canvas { image-rendering: pixelated; display: block; }
+.joueur-infos { flex: 1; display: flex; flex-direction: column; gap: 5px; }
+.joueur-pv { display: flex; align-items: center; gap: 8px; }
+.joueur-pv span { font-size: .74rem; color: var(--texte-doux); white-space: nowrap; }
+.joueur-statuts { display: flex; gap: 4px; flex-wrap: wrap; min-height: 18px; }
+.joueur-energie { font-size: .9rem; color: var(--or); font-weight: bold; }
+
+.ligne-combat { display: flex; justify-content: center; margin-bottom: 12px; }
+
+.main-combat {
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+  padding: 10px 0;
+}
+.main-combat .carte { width: 130px; }
+
+.journal-combat {
+  margin-top: 14px; max-height: 110px; overflow-y: auto;
+  background: #100c18; border: 2px solid var(--bordure); border-radius: 4px;
+  padding: 8px 10px; font-size: .74rem; color: var(--texte-doux);
+}
+.journal-combat div { padding: 1px 0; }
+
+/* ---------------------------------- récompense ---------------------------------- */
+
+.choix-recompense {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px; margin-bottom: 16px;
+}
+
+/* ------------------------------------ repos ------------------------------------ */
+
+.repos-choix { margin-bottom: 24px; }
+
+/* --------------------------------- événement --------------------------------- */
+
+.texte-evenement {
+  color: var(--texte-doux); font-size: .95rem; line-height: 1.6;
+  max-width: 520px; margin-bottom: 20px;
+}
+.choix-evenement { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.choix-evenement-bouton { text-align: left; max-width: 480px; }
+
+/* -------------------------------------- fin -------------------------------------- */
+
+.fin { text-align: center; padding: 40px 0; }
+.fin h2 { font-size: 1.5rem; margin: 0 0 10px; color: var(--or); }
+.fin p { color: var(--texte-doux); max-width: 440px; margin: 0 auto 20px; }
+.details-fin { font-size: .8rem; color: var(--texte-doux); margin-bottom: 24px; }
+.details-fin div { margin-bottom: 3px; }
+
+@media (max-width: 520px) {
+  .main-combat .carte { width: 108px; min-height: 130px; }
+  .ennemis-combat { gap: 14px; }
+}
