@@ -22,7 +22,7 @@ function creerEnnemiDOM(ennemi, options) {
 
   const portrait = document.createElement('div');
   portrait.className = 'ennemi-portrait';
-  portrait.appendChild(portraitAspect(ennemi.aspect, 4));
+  portrait.appendChild(ennemi.aspect.nouveauCanvas(4));
   el.appendChild(portrait);
 
   const nom = document.createElement('div');
