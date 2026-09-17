@@ -12,6 +12,9 @@ vendor/
 │                    bootstrap.bundle.min.js       (v5.3.8, inclut Popper)
 ├── sqlite/          sql-wasm.js + sql-wasm-base64.js
 │
+│   ── pixel art ──
+├── lutin/           lutin.js                      (v1.0.0)   sprites en grille de caractères
+│
 │   ── interface & interaction ──
 ├── anime/           anime.min.js                  (v3.2.2)   animations
 ├── hammer/          hammer.min.js                 (v2.0.7)   gestes tactiles
@@ -47,6 +50,7 @@ vendor/
 | **jquery** | Manipuler le DOM, les événements, les requêtes | 30 Ko | `$` |
 | **bootstrap** | Mise en page et composants d'interface prêts à l'emploi | 230 Ko | `bootstrap` |
 | **sqlite** | Une vraie base SQL dans le navigateur | 1,2 Mo | `initSqlJs` |
+| **lutin** | Sprites en pixel art : grille de caractères + palette, ombrage, contour, animation | 15 Ko | `Lutin` |
 | **anime** | Animer des éléments : cartes, barres, transitions | 17 Ko | `anime` |
 | **hammer** | Gestes au doigt : balayage, pincement, appui long | 21 Ko | `Hammer` |
 | **mousetrap** | Raccourcis clavier, y compris séquences de touches | 5 Ko | `Mousetrap` |
@@ -81,6 +85,7 @@ Ne charge que ce dont la page a besoin. `chartjs`, `html2canvas` et `jspdf` sont
   <script src="vendor/sqlite/sql-wasm.js"></script>
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="vendor/lutin/lutin.js"></script>
   <script src="vendor/anime/anime.min.js"></script>
   <script src="script.js"></script> <!-- ton code perso, après les librairies -->
 </body>
@@ -97,6 +102,7 @@ Ces trois-là reviennent systématiquement quand la page s'ouvre par double-clic
 | **howler** | Les sons ne se chargent pas (XHR bloqué) | `html5: true`, ou sons en base64 |
 | **confetti** | Erreur si `useWorker: true` | `useWorker: false` |
 | **html2canvas** / **jspdf** | `SecurityError` à l'export si une image locale est présente | Images en base64, ou canvas dessiné en JS |
+| **lutin** | `Lutin.depuisImage()` échoue sur une image locale (même cause) | `Lutin.depuisFichier()` |
 
 Chaque documentation détaille ces cas dans sa section dédiée.
 
